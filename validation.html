@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        JS Validation Form
+    </title>
+    <script>         function validate() {
+            if (document.myform.myname.value == "") {
+                alert("Not to be left blank!!"); document.myform.myname.focus(); return false;
+            } if (document.myform.contact.value == "") {
+                alert("Not to be left blank!!"); document.myform.contact.focus(); return false;
+            } if (document.myform.contact.value.length != 10) {
+                alert("Contact no. should contain 10 digits!!"); document.myform.contact.focus(); return false;
+            } if (isNaN(document.myform.contact.value)) {
+                alert("Contact no. should contain only digits!!"); document.myform.contact.focus(); return false;
+            } if (document.myform.email.value == "") {
+                alert("Not to be left blank!!"); document.myform.email.focus(); return false;
+            }
+            return true;
+        } 
+    </script>
+</head>
+
+<body>
+    <form name="myform" onsubmit="return validate()">
+        Name <input type="text" name="myname"><br><br>
+        Contact no. <input type="text" name="contact"><br><br>
+        E-mail <input type="email" name="email"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
